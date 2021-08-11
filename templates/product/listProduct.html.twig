@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}listProduct{% endblock %}
+{% block body %}
+<div class= "container">
+<div class="row row-cols-3">
+{% if alert is defined %}
+<div class="alert alert-danger">
+Ban chua dang nhap
+</div>
+{% endif %}
+{% for product in products %}
+<div class="card col " style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">{{product.price}}</p>
+    <a href="/product/edit/{{product.id}}" class="btn btn-primary">Edit</a>
+    <a href="/product/delete/{{product.id}}" class="btn btn-primary">Delete</a>
+  </div>
+</div>
+<br>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

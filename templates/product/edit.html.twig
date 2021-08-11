@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+<div>
+Day la form update
+</div>
+<div class="container">
+<form action="/product/update">
+  <div class="mb-3">
+   <label for="name">{{product.name}}</label>
+   <input type="text" id="name" name="name">
+    
+  </div>
+  <div class="mb-3">
+    <label for="quantity">{{product.price}}</label>
+    <input type="number" id="quantity" name="price" min="0">
+  </div>
+  <input type="hidden" name="id" value="{{product.id}}">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+ 
+{% endblock %}
